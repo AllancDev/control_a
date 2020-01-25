@@ -15,7 +15,8 @@ CREATE TABLE tb_users (
 CREATE TABLE tb_permissions_groups (
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_company INT NOT NULL,
-    name VARCHAR(50) NOT NULL
+    name VARCHAR(50) NOT NULL,
+    params VARCHAR(100)
 );
 
 -- CREATE TABLE PARAMS PERMISSIONS
@@ -110,4 +111,6 @@ CREATE TABLE tb_companies (
 
 INSERT INTO tb_users ( id_company, email, password, groups ) VALUES ( 1, 'desenvolvimento@logfy.net.br', MD5('123'), 0); -- User teste
 INSERT INTO tb_companies ( doc, name) VALUES ( '09492594978', 'LOGFY SOLUÇÕES' ); -- Companies Teste
-INSERT INTO tb_purchases
+INSERT INTO tb_permissions_groups (id_company, name, params) VALUES (1, 'Grupo Logfy - (Diretoria)', '1,2');
+INSERT INTO tb_permissions_params (id_company, name) VALUES (1, 'logout');
+INSERT INTO tb_permissions_params (id_company, name) VALUES (1, 'permissions_view');
