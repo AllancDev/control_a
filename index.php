@@ -15,6 +15,9 @@
         }
         });
 
+
+// Controle da aplicação
+
         $core = new Core();
         $core->run();
 ?>
