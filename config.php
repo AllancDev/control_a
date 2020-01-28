@@ -1,6 +1,6 @@
 <?php
 require 'environment.php';
-
+error_reporting(-1);
 global $config;
 $config = array();
 if(ENVIRONMENT == 'development') {
